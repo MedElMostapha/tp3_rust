@@ -1,0 +1,3 @@
+example.com
+safe-school.edu
+updates.example.org

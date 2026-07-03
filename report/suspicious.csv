@@ -1,0 +1,4 @@
+normalized_domain,source,status,reason
+login-example.com,proxy_log,suspicious,suspicious pattern detected
+xn--phishing-test.com,email_gateway,suspicious,suspicious pattern detected
+paypa1-login.xyz,email_gateway,suspicious,suspicious pattern detected

@@ -1,0 +1,4 @@
+normalized_domain,source,status,reason
+example.com,manual,accepted,allowlisted
+safe-school.edu,manual,accepted,allowlisted
+updates.example.org,dns_log,accepted,allowlisted

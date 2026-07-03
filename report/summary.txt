@@ -1,0 +1,7 @@
+IOCGuard Report Summary
+==============================
+Total lines processed: 9
+Valid domains:       6
+Invalid domains:     3
+Allowlisted domains: 3
+Suspicious domains:  3

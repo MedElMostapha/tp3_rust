@@ -1,0 +1,4 @@
+original_value,source,status,reason
+bad..domain,proxy_log,rejected,domain contains consecutive dots
+-malformed.com,manual,rejected,label '-malformed' starts or ends with a hyphen
+verylonglabelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,dns_log,rejected,label 'verylonglabelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' exceeds 63 characters

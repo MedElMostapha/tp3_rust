@@ -1,0 +1,10 @@
+domain,source
+Example.COM,manual
+login-example.com,proxy_log
+bad..domain,proxy_log
+xn--phishing-test.com,email_gateway
+safe-school.edu,manual
+paypa1-login.xyz,email_gateway
+-malformed.com,manual
+updates.example.org.,dns_log
+verylonglabelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,dns_log
