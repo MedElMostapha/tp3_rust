@@ -1,4 +1,4 @@
-use crate::domain::{normalize, DomainRecord, DomainStatus};
+use crate::domain::{DomainRecord, DomainStatus, normalize};
 
 const SUSPICIOUS_TLDS: &[&str] = &["zip", "mov", "top", "xyz", "tk"];
 const SUSPICIOUS_KEYWORDS: &[&str] = &["login", "verify", "secure", "update", "paypa1"];
@@ -54,10 +54,10 @@ fn is_suspicious_domain(domain: &str) -> bool {
         return true;
     }
 
-    if let Some(tld) = domain.rsplit('.').next() {
-        if SUSPICIOUS_TLDS.contains(&tld) {
-            return true;
-        }
+    if let Some(tld) = domain.rsplit('.').next()
+        && SUSPICIOUS_TLDS.contains(&tld)
+    {
+        return true;
     }
 
     let lower = domain.to_lowercase();
@@ -82,11 +82,7 @@ fn parse_csv_line(line: &str) -> Result<(String, String), String> {
 
     let mut parts = line.splitn(2, ',');
     let domain = parts.next().ok_or("missing domain")?.trim().to_string();
-    let source = parts
-        .next()
-        .ok_or("missing source")?
-        .trim()
-        .to_string();
+    let source = parts.next().ok_or("missing source")?.trim().to_string();
 
     if domain.is_empty() {
         return Err("empty domain in CSV line".to_string());
@@ -95,10 +91,7 @@ fn parse_csv_line(line: &str) -> Result<(String, String), String> {
     Ok((domain, source))
 }
 
-pub fn process_input(
-    csv_content: &str,
-    allowlist: &[String],
-) -> ValidationResult {
+pub fn process_input(csv_content: &str, allowlist: &[String]) -> ValidationResult {
     let mut records = Vec::new();
     let mut processed = 0;
     let mut valid_count = 0;
